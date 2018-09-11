@@ -8,11 +8,9 @@ snippets & some common solutions
 
 ## todo
 
-[] Video on Mobile
+[x] Video on Mobile
 
 [] Upload file
-
-[] Mobile rem scheme
 
 [] Identify PC or Mobile
 
