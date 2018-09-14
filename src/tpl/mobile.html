@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="../assets/style/reset.css"> -->
+  <!-- viewport-units-buggyfill 是为了兼容低版本，但是如果真要兼容，使用 https://github.com/amfe/lib-flexible 方案会更轻量 -->
+  <!-- 个人习惯了基于 iPhone6 的 750px 的设计稿，即采用 1rem = 75px -->
+  <!-- <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script> -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 10vw;
+      background-color: #ccc;
+    }
+    @media screen and (max-width: 320px) {
+      html {
+        font-size: 32px;
+      }
+    }
+    @media screen and (min-width: 540px) {
+      html {
+        font-size: 54px;
+      }
+    }
+    body {
+      min-width: 320px;
+      max-width: 540px;
+      background-color: #fff;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+</body>
+</html>

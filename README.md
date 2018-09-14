@@ -12,6 +12,8 @@ snippets & some common solutions
 
 [] Upload file
 
+[x] adaptive layout
+
 [] Identify PC or Mobile
 
 [] Localtion storage
