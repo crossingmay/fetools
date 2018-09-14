@@ -16,15 +16,13 @@ snippets & some common solutions
 
 [] Identify PC or Mobile
 
+[x] Call native methods, iOS & Android
+
 [] Localtion storage
 
 [] Jwt
 
 [] Fe authentication on manage platform
-
-[] Call native methods, iOS & Android
-
-[] create static simple page on Mobile quickly
 
 [] simple images lazyload
 
