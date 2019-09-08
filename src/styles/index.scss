@@ -1,0 +1,147 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './btn.scss';
+
+/* 自定义通用样式 */
+body {
+  height: 100%;
+  margin: 0 auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ph-20 {
+  padding: 0 20px;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: '';
+    clear: both;
+    height: 0;
+  }
+}
+
+.hairline {
+  border: 0;
+  width: 100%;
+  height: 0;
+  margin: 20px 0;
+  border-bottom: 1px solid $boardGray;
+}
+
+.block {
+  display: block;
+}
+
+.hide {
+  display: none
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.search-condition-wrap {
+  margin-top: 25px;
+
+  .search-condition-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 12px;
+
+    &__label {
+      margin-right: 6px;
+      color: $labelBlack;
+      font-size: 14px;
+    }
+
+    .condition-label {
+      margin-right: 10px;
+      font-size: 14px;
+    }
+  }
+}
