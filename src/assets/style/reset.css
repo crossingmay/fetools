@@ -22,9 +22,14 @@ img {
   border: none;
   vertical-align: middle;
 }
+input, textarea {
+  outline: none;
+}
 table {
   border-collapse: collapse;
+  /* border-spacing: 0; */
 }
+
 html {
   overflow-y: scroll;
 }

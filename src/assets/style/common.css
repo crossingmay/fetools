@@ -51,7 +51,7 @@ html {
   overflow: hidden;
 }
 
-/* 垂直居中的几种情况 */
+/* todo-垂直居中的几种情况 */
 
 /* css画三角形 */
 .triangle {
@@ -60,4 +60,34 @@ html {
   border-width: 0px 300px 300px 300px;
   height: 0px;
   width: 0px;
+}
+
+/* todo-自定义滚动条样式 */
+
+/* todo-毛玻璃效果 */
+
+/* todo-国难纪念日置灰效果 */
+
+/* 打印自动显示超链接URI */
+@media print {
+  a:after {
+    content: '["attr(href)"]';
+  }
+}
+
+/* 移动端-禁止用户选中 */
+body {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 禁用输入框、文本框的轮廓线 */
+input, textarea {
+  outline: none;
+}
+
+/* 禁用文本框缩放 */
+textarea {
+  resize: none;
 }
