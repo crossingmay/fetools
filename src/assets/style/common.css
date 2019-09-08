@@ -1,0 +1,63 @@
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: inline-block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+/* css字体属性缩写 */
+.font-rank {
+  font: font-style font-variant font-weight font-size line-height font-faimily;
+}
+
+/* 自定义文本选择的高亮 */
+::selection {
+  background: skyblue;
+}
+
+/* 全屏背景 */
+html {
+  background: url('images/bg.jpg') no-repeat center center fixed;
+}
+
+/* 内容垂直居中 */
+.container {
+  min-height: 6.5em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* 强制垂直滚动条 */
+html {
+  height: 101%;
+}
+
+/* 禁止自动换行 */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* 文本溢出显示省略号-单行 */
+.content-ellipsis {
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 垂直居中的几种情况 */
+
+/* css画三角形 */
+.triangle {
+  border-color: transparent transparent lightblue transparent;
+  border-style: solid;
+  border-width: 0px 300px 300px 300px;
+  height: 0px;
+  width: 0px;
+}
