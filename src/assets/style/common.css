@@ -7,6 +7,7 @@
   clear: both;
   visibility: hidden;
 }
+
 .clearfix {
   *zoom: 1;
 }
@@ -53,13 +54,13 @@ html {
 
 /* 文本溢出显示省略号-多行 */
 .content-ellipsis-multi {
-	display: -webkit-box;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	-webkit-line-clamp: 3;
-	/* autoprefixer: off */
-	-webkit-box-orient: vertical;
-	/* autoprefixer: on */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
 }
 
 /* todo-垂直居中的几种情况 */
@@ -73,7 +74,50 @@ html {
   width: 0px;
 }
 
-/* todo-自定义滚动条样式 */
+/*
+  自定义滚动条样式
+  ::-webkit-scrollbar 滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等。
+  ::-webkit-scrollbar-button 滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。
+  ::-webkit-scrollbar-track 外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。
+  ::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）。
+  ::-webkit-scrollbar-thumb 滚动条里面可以拖动的那部分
+  ::-webkit-scrollbar-corner 边角
+  ::-webkit-resizer 定义右下角拖动块的样式
+ */
+
+.aticle-wrap {
+  height: 100%;
+  overflow: auto;
+}
+
+.aticle-wrap::-webkit-scrollbar {
+  width: 5px;
+}
+
+.aticle-wrap::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+.aticle-wrap::-webkit-scrollbar-track-piece {
+  background-color: purple;
+}
+
+.aticle-wrap::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: purple;
+}
+
+.aticle-wrap::-webkit-scrollbar-button {
+  display: none;
+}
+
+.aticle-wrap::-webkit-scrollbar-corner {
+  background-color: purple;
+}
+
+.aticle-wrap::-webkit-resizer {
+  background-color: purple;
+}
 
 /* todo-毛玻璃效果 */
 
@@ -94,7 +138,8 @@ body {
 }
 
 /* 禁用输入框、文本框的轮廓线 */
-input, textarea {
+input,
+textarea {
   outline: none;
 }
 
