@@ -51,6 +51,17 @@ html {
   overflow: hidden;
 }
 
+/* 文本溢出显示省略号-多行 */
+.content-ellipsis-multi {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 3;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+}
+
 /* todo-垂直居中的几种情况 */
 
 /* css画三角形 */
