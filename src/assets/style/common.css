@@ -121,7 +121,10 @@ html {
 
 /* todo-毛玻璃效果 */
 
-/* todo-国难纪念日置灰效果 */
+/* 国难纪念日置灰效果 */
+html {
+  filter: grayscale(1);
+}
 
 /* 打印自动显示超链接URI */
 @media print {
