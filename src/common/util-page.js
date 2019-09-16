@@ -100,19 +100,42 @@ function banViewSource (e) {
   }
 }
 
-// 添加到收藏夹
-function addFavorite (url, title) {
-  // todo
+// 添加到收藏夹，不支持chrome和safari浏览器
+function addFavorite () {
+  if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+    window.sidebar.addPanel(document.title, window.location.href, '')
+  } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite
+    window.external.AddFavorite(location.href, document.title)
+  } else { // webkit - safari/chrome
+    alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL')
+      + ' + D to bookmark this page.')
+  }
 }
 
-// 将网页设置为首页
-function setHomePage (url) {
-  // todo
+// 将网页设置为首页,chrome不支持，firefox支持
+function setHomePage (obj, url) {
+  try {
+    obj.style.behavior = 'url(#default#homepage)'; obj.setHomePage(url)
+  }
+  catch (e) {
+    if (window.netscape) {
+      try {
+        netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect')
+      }
+      catch (e) {
+        alert('此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为"true",双击即可。')
+      }
+      var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch)
+      prefs.setCharPref('browser.startup.homepage', url)
+    } else {
+      alert('您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入：' + url + '点击确定。')
+    }
+  }
 }
 
 // 判断上一页来源
 function getPrePage () {
-  return document.referrer;
+  return document.referrer
 }
 
 // 获取浏览器信息
