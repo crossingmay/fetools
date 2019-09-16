@@ -178,6 +178,19 @@ var banSpecialKey = (function () {
   }
 })()
 
+// 设置滚动具有平滑的过渡效果
+window.scrollTo({
+  behavior: 'smooth'
+})
+
+window.scrollBy({
+  behavior: 'smooth'
+})
+
+document.querySelector('.box').scrollIntoView({
+  behavior: 'smooth'
+})
+
 // todo-页面悬浮导航
 
 // todo-下拉式导航菜单

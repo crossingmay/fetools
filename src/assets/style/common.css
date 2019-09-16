@@ -129,6 +129,7 @@ html {
   background-position: center top;
   background-size: cover;
 }
+
 .content {
   width: 800px;
   height: 400px;
@@ -144,6 +145,7 @@ html {
   padding: 50px;
   box-sizing: border-box;
 }
+
 .content::before {
   content: '';
   position: absolute;
@@ -192,4 +194,9 @@ textarea {
 /* 禁用文本框缩放 */
 textarea {
   resize: none;
+}
+
+/* 移动端全局滚动具有平滑效果，锚点跳转、设置scrollTop 平滑滚动 */
+html {
+  scroll-behavior: smooth;
 }
