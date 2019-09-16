@@ -87,4 +87,32 @@ function clearAllCookie () {
   }
 }
 
-export { formatTime, dic2Array, getQueryStringByName, setCookie, getCookie, clearAllCookie }
+// 节流函数-减少代码执行频率
+// window.addEventListener('scroll', throttle(() => console.log('滚动中！')))
+function throttle (fn, interval = 500) {
+  let run = true
+
+  return function () {
+    if (!run) return
+    run = false
+    setTimeout(() => {
+      fn.apply(this, arguments)
+      run = true
+    }, interval)
+  }
+}
+
+// 函数防抖-判断某个动作结束，如刚刚的滚动结束、input输入结束等
+// window.addEventListener('scroll', debounce(() => console.log('滚动结束！')))
+function debounce (fn, interval = 500) {
+  let timeout = null
+
+  return function () {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      fn.apply(this, arguments)
+    }, interval)
+  }
+}
+
+export { formatTime, dic2Array, getQueryStringByName, setCookie, getCookie, clearAllCookie, throttle, debounce }
