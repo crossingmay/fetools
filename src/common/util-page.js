@@ -191,6 +191,26 @@ document.querySelector('.box').scrollIntoView({
   behavior: 'smooth'
 })
 
+// 滚动到底部
+window.scrollTo({
+  left: 0,
+  top: document.scrollingElement.scrollHeight
+})
+
+// 判断浏览器已滚动到底部
+window.addEventListener('scroll', () => {
+  let {
+    scrollTop,
+    scrollHeight,
+    clientHeight
+  } = document.scrollingElement
+
+  // 当前滚动高度 + 视口高度 >= 文档总高度
+  if (scrollTop + clientHeight >= scrollHeight) {
+    console.log('已到达底部')
+  }
+})
+
 // todo-页面悬浮导航
 
 // todo-下拉式导航菜单
