@@ -1,3 +1,8 @@
+/* 比较好的通用字体策略 */
+body {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
 /* 清除浮动 */
 .clearfix:before,
 .clearfix:after {
@@ -200,3 +205,24 @@ textarea {
 html {
   scroll-behavior: smooth;
 }
+
+/* 解决iOS设备局部滚动不顺畅(粘手) */
+#app {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 阻止滚动传播 */
+.box {
+  overscroll-behavior: contain;
+}
+
+/* 滚动结束后，强制滚动到指定元素 */
+ul {
+  scroll-snap-type: x mandatory;
+}
+
+ul li {
+  scroll-snap-align: start;
+}
+
+/* 滚动相关的更新，参考 https://mp.weixin.qq.com/s/tkX-F5cQHaBP15oCJ2BJZw 写得非常实用 */
