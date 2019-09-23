@@ -69,7 +69,7 @@ html {
 }
 
 /* todo-垂直居中的几种情况，外层container, 内层box */
-/* 1 定宽高1，absolute + 负 margin */
+/* 1 定宽高1，absolute + 负 margin，PC兼容性好 */
 .container {
   position: relative;
 }
@@ -104,6 +104,64 @@ html {
   left: calc(50% - 50px);
 }
 
+/* 2 不定宽高1，absolute + transform */
+.container {
+  position: relative;
+}
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 2 不定宽高2，lineheight */
+.container {
+  line-height: 300px;
+  text-align: center;
+  font-size: 0px;
+}
+.box {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: initial;
+  text-align: left; /* 修正文字 */
+}
+
+/* 2 不定宽高3，table-不推荐，废弃，需要的结构太麻烦了 */
+/* 2 不定宽高4，css-table，PC高兼容性 */
+.container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.box {
+  display: inline-block;
+}
+
+/* 2 不定宽高5，flex，移动端推荐 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2 不定宽高5，flex，移动端推荐 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2 不定宽高6，grid，不推荐 */
+.container {
+  display: grid;
+}
+.box {
+  align-self: center;
+  justify-self: center;
+}
 
 /* css画三角形 */
 .triangle {
