@@ -68,7 +68,42 @@ html {
   /* autoprefixer: on */
 }
 
-/* todo-垂直居中的几种情况 */
+/* todo-垂直居中的几种情况，外层container, 内层box */
+/* 1 定宽高1，absolute + 负 margin */
+.container {
+  position: relative;
+}
+.box {
+  position: absolute;;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+/* 1 定宽高2，absolute + margin auto */
+.container {
+  position: relative;
+}
+.box {
+  position: absolute;;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* 1 定宽高3，absolute + calc */
+.container {
+  position: relative;
+}
+.box {
+  position: absolute;;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+}
+
 
 /* css画三角形 */
 .triangle {
