@@ -115,4 +115,17 @@ function debounce (fn, interval = 500) {
   }
 }
 
-export { formatTime, dic2Array, getQueryStringByName, setCookie, getCookie, clearAllCookie, throttle, debounce }
+// 类型识别1，可以识别标准类型，及内置对象类型，不能识别自定义对象
+function typeProto (obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1)
+}
+
+// 类型识别2，constructor，可识别原始类型、内置对象类型、自定义类型，不能识别udefined 和 null
+function getConstructorName (obj) {
+  return obj && obj.constructor && obj.constructor.toString().match(/function\s*([^(]*)/)[1]
+}
+
+export {
+  formatTime, dic2Array, getQueryStringByName, setCookie, getCookie, clearAllCookie,
+  throttle, debounce, typeProto, getConstructorName
+}
