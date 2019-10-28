@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>温馨提示</title>
+  <style>
+    html,
+    body,
+    img,
+    div,
+    header {
+      padding: 0;
+      margin: 0;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .content img {
+      max-width: 100%;
+      margin-bottom: 17px;
+      vertical-align: middle;
+    }
+
+    .content header {
+      width: 25%;
+      margin: 0 auto;
+      padding: 27px 0 30px 0;
+    }
+
+    .content header img {
+      margin: 0;
+    }
+  </style>
+</head>
+<!-- use intersectionObserver, need polyfill -->
+<body>
+  <div class="content">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-text.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-1.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-2.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-3.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-4.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-5.jpg" alt="">
+    <img src="http://static.lokiimay.com/paytips-bg.jpg" data-lazy="lazy"
+      data-imgpath="http://static.lokiimay.com/paytips-img-6.jpg" alt="">
+  </div>
+  <script src="./lib/js/intersection-observer.js"></script>
+  <script>
+    function loadImg(el) {
+      if (el.dataset.lazy === 'lazy') {
+        const source = el.dataset.imgpath;
+        el.src = source;
+        el.dataset.lazy = 'loaded';
+        el.removeAttribute('data-imgpath');
+      }
+    }
+
+    const io = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        const el = entry.target;
+        const intersectionRatio = entry.intersectionRatio;
+        if (intersectionRatio > 0) {
+          loadImg(el);
+        }
+        el.onload = el.onerror = () => io.unobserve(el);
+      }
+    });
+
+    function checkImgs() {
+      const imgs = document.querySelectorAll('img[data-imgpath]');
+      for (let index = 0; index < imgs.length; index++) {
+        const element = imgs[index];
+        io.observe(element);
+      }
+    }
+    setTimeout(function () {
+      checkImgs();
+    }, 200);
+  </script>
+</body>
+
+</html>

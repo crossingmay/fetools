@@ -24,7 +24,7 @@ snippets & some common solutions
 
 [] Fe authentication on manage platform
 
-[] simple images lazyload
+[x] simple images lazyload
 
 [x] reset.css
 
