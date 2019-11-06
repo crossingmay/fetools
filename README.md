@@ -14,7 +14,7 @@ snippets & some common solutions
 
 [x] adaptive layout
 
-[] Identify PC or Mobile
+[x] Identify PC or Mobile
 
 [x] Call native methods, iOS & Android
 
