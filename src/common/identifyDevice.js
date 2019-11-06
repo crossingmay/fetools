@@ -15,3 +15,17 @@ if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
 }
 
 // we also can use WebViewJavascriptBridge
+
+// pc or mobile
+function isMobile () {
+  return /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+}
+
+// ios or android
+function isIphone () {
+  return /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
+}
+
+function isAndroid () {
+  return /(Android)/i.test(navigator.userAgent)
+}
