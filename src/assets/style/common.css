@@ -319,3 +319,19 @@ ul li {
 }
 
 /* 滚动相关的更新，参考 https://mp.weixin.qq.com/s/tkX-F5cQHaBP15oCJ2BJZw 写得非常实用 */
+
+/* 0.5px边框问题 */
+.btn-wrap {
+  position: relative;
+}
+.btn-wrap:after {
+  content: " ";
+  transform: scale(0.5);
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
