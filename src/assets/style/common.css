@@ -4,8 +4,8 @@ body {
 }
 
 /* 清除浮动 */
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
   content: " ";
   display: inline-block;
   height: 0;
