@@ -42,9 +42,10 @@ function dic2Array (obj) {
   return resArr
 }
 
-function getQueryStringByName (name) {
+function getQueryStringByName (name, url) {
   var _reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
-  var _r = window.location.search.substr(1).match(_reg)
+  var _url = url || window.location.search
+  var _r = _url.substr(1).match(_reg)
   var _context = ''
   if (_r != null) {
     _context = _r[2]
