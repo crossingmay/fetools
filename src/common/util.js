@@ -182,5 +182,5 @@ function getConstructorName (obj) {
 
 export {
   formatTime, dic2Array, getQueryStringByName, setCookie, getCookie, clearAllCookie,
-  throttle, debounce, typeProto, getConstructorName
+  throttle, debounce, typeProto, getConstructorName, getAllUrlParams
 }
