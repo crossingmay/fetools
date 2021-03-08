@@ -1,0 +1,13 @@
+{
+  "name": "local_proxy",
+  "version": "1.0.0",
+  "description": "├── nginx │   ├── ca.crt │   ├── ca.srl │   ├── nginx.conf │   ├── nginx.log │   ├── server.crt │   ├── server.csr │   └── server.key",
+  "main": "index.js",
+  "scripts": {
+    "nginx_start": "sudo nginx -p ${PWD}/nginx -c ${PWD}/nginx/nginx.conf",
+    "nginx_stop": "sudo nginx -p ${PWD}/nginx -c ${PWD}/nginx/nginx.conf -s stop",
+    "nginx_reload": "sudo nginx -p ${PWD}/nginx -c ${PWD}/nginx/nginx.conf -s reload"
+  },
+  "author": "",
+  "license": "ISC"
+}
