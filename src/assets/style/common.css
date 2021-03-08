@@ -335,3 +335,8 @@ ul li {
   border: 1px solid #333;
   border-radius: 4px;
 }
+
+/* 条纹背景 */
+.bg {
+  background: repeating-linear-gradient(120deg, #cbc2a5, #cbc2a5 9px, #d9d1b7 0, #d9d1b7 16px);
+}
